@@ -43,10 +43,10 @@
 
 
 @code {
-    private String inputString;
-    private Double inputValue;
-    private String operatorSymbol;
-    private Double secondValue;
+    private string inputString;
+    private double inputValue;
+    private string operatorSymbol;
+    private double secondValue;
 
     private void numberClick(string value)
     {
@@ -54,7 +54,7 @@
     }
     private void operationClick(string operatorSymbol)
     {
-        if (operatorSymbol == "-" && inputString.Equals(""))
+        if (operatorSymbol == "-" && inputString=="")
         {
             inputString += "-";
         }
@@ -69,7 +69,7 @@
     {
         secondValue = Convert.ToDouble(inputString);
 
-        if (!inputString.Equals(""))
+        if (inputString != "")
         {
             switch (operatorSymbol)
             {
