@@ -54,11 +54,11 @@
     }
     private void operationClick(string operatorSymbol)
     {
-        if (operatorSymbol == "-" && inputString == "" || operatorSymbol == "-" && string.IsNullOrEmpty(inputString))
+        if (operatorSymbol == "-" && string.IsNullOrEmpty(inputString))
         {
-            inputString += "-";
+            inputString = "-";
         }
-        if (!inputValue.Equals(""))
+        if (!string.IsNullOrEmpty(inputString))
         {
             inputValue = Convert.ToDouble(inputString);
             this.operatorSymbol = operatorSymbol;
@@ -67,8 +67,7 @@
     }
     private void operationEquals()
     {
-        
-
+    
         if (inputString != "")
         {
             secondValue = Convert.ToDouble(inputString);
