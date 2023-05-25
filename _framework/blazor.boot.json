@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Microsoft.AspNetCore.Components.dll": "sha256-pnvft61S0e+DjPhJXjnDIg8g96LbXYVRbhOmRcfxgkw=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-7bWSqApt2ecI9zKGZ8lf6SX0Co+NSEsR9MDJqhwTbiM=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-SintHY\/AqRVi\/eZZwzffERSuvPxwdZw90aK8oBIVGi4=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-BAmMMlWVcgSBgTfTm8pHSgB8HDai3tPKM6L+6d7eIfk=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-zhFtW4kE16TdrpPne9I1Cu9o0KYzrS50VE9MVSifJg4=",
@@ -21,7 +21,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-YColTWA58whC+8aBjv1O7HgsyYrbHTba601EkNDWAlo=",
       "Microsoft.JSInterop.dll": "sha256-852hy4SOEnmcdVbbPS30NHV0zt2VT6CIwWAvG+ocjVw=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-ZDcf0L7NZ3M+UeOpaA9JkJZ1KDHW2OOoR0nideLNeQE=",
-      "SoftwareTestingSite.dll": "sha256-OXn3IX234IrmofsTx+uVGMlMDXa+yIRDDCXWkMEttb4=",
+      "SoftwareTestingSite.dll": "sha256-3W\/PgE8aq0VhfJF+zDlA6RV+0zA90Hej3zLFG5wrFcM=",
       "System.Collections.Concurrent.dll": "sha256-Hf23v1xXyj96gzTlHu6mD79QT1YPauDU2OVVFMWVpfc=",
       "System.Collections.dll": "sha256-cYhmljkKIcV7tJtC4hFJXOTlEMDccyEhRb+8EqklKkQ=",
       "System.ComponentModel.dll": "sha256-O3RW\/boIsh3d+wCmmaOefzo76fai+bgh2ejJxeqYH5c=",
@@ -33,7 +33,7 @@
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-0a5ry3M4Rx82zxL5dXKPvMvHbwk9koTnjP87M4gSBjs=",
       "System.Private.Uri.dll": "sha256-guC3rtxbtoG+JPU1CIMJuGYvNV\/Mt8zpIqlUA+v\/FhU=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-h9bKavhsuyFmVAbl1xnoISlBXVUjTBb5oz\/ubi91DSc=",
-      "System.Runtime.dll": "sha256-ApaIhN9NQOFtyEu8TdVd4jrpfy932MkR2aIDdZfl5PY=",
+      "System.Runtime.dll": "sha256-pydy4JqD30b9ZgpOYfWYV8s0\/9rU6J6IDYZOe+wOR0U=",
       "System.Text.Encodings.Web.dll": "sha256-ZwGnrj8QKyEtLTjIXMY3rdnJk8n1Ge9H0DFtBjmlhvI=",
       "System.Text.Json.dll": "sha256-1w+8r1iPK4cvTR+fg7KEZhnIEaK93olYguWAch7XiWA="
     },
