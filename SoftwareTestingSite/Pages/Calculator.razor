@@ -7,21 +7,96 @@
     <div class="calculator">
         <form>
             <div>
-                <input type="text" @bind="@inputValue" />
+                <input type="text" @bind="@inputString" />
+            </div>
+            <div>
+
             </div>
             <div>
                 <input type="button" class="btn btn-primary" value="1" @onclick=@(_=>numberClick("1"))>
                 <input type="button" class="btn btn-primary" value="2" @onclick=@(_=>numberClick("2"))>
                 <input type="button" class="btn btn-primary" value="3" @onclick=@(_=>numberClick("3"))>
+                <input type="button" class="btn btn-primary" value="=" @onclick=@(_=>operationClick("/"))>
             </div>
+            <div>
+                <input type="button" class="btn btn-primary" value="4" @onclick=@(_=>numberClick("4"))>
+                <input type="button" class="btn btn-primary" value="5" @onclick=@(_=>numberClick("5"))>
+                <input type="button" class="btn btn-primary" value="6" @onclick=@(_=>numberClick("6"))>
+                <input type="button" class="btn btn-primary" value="=" @onclick=@(_=>operationClick("*"))>
+            </div>
+            <div>
+                <input type="button" class="btn btn-primary" value="7" @onclick=@(_=>numberClick("7"))>
+                <input type="button" class="btn btn-primary" value="8" @onclick=@(_=>numberClick("8"))>
+                <input type="button" class="btn btn-primary" value="9" @onclick=@(_=>numberClick("9"))>
+                <input type="button" class="btn btn-primary" value="-" @onclick=@(_=>operationClick("-"))>
+            </div>
+             <div>
+                <input type="button" class="btn btn-primary" value="0" @onclick=@(_=>numberClick("0"))>
+                <input type="button" class="btn btn-primary" value="." @onclick=@(_=>numberClick("."))>
+                <button class="btn btn-primary" @onclick="operationEquals">=</button>
+                <input type="button" class="btn btn-primary" value="+" @onclick=@(_=>operationClick("+"))>
+             </div>
+
+
         </form>
     </div>
 </div>
 
 
 @code {
-    private String? inputValue;
+    private String? inputString;
+    private Double? inputValue;
+    private String? operatorSymbol;
+    private Double? secondValue;
+
     private void numberClick(string value){
-        inputValue += value;
+        inputString += value;
     }
+    private void operationClick(string operatorSymbol)
+    {
+        if (operatorSymbol == "-" && inputString.Equals(""))
+        {
+            inputString += "-";
+        }
+        if (!inputValue.Equals("")){
+            inputValue = Convert.ToDouble(inputString);
+            this.operatorSymbol = operatorSymbol;
+            inputString = "";
+        }
+    }
+    private void operationEquals()
+    {
+        secondValue = Convert.ToDouble(inputString);
+
+        if (!inputValue.Equals(""))
+        {
+            switch (operatorSymbol)
+            {
+                case "/":
+                    inputValue /= secondValue;
+                    break;
+            }
+            switch (operatorSymbol)
+            {
+                case "*":
+                    inputValue *= secondValue;
+                    break;
+            }
+            switch (operatorSymbol)
+            {
+                case "-":
+                    inputValue -= secondValue;
+                    break;
+            }
+            switch (operatorSymbol)
+            {
+                case "+":
+                    inputValue += secondValue;
+                    break;
+            }
+
+            inputString = Convert.ToString(inputValue);
+        }
+    }
+
 }
