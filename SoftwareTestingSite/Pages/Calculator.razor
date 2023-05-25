@@ -68,7 +68,7 @@
     private void operationEquals()
     {
     
-        if (inputString != "")
+        if (string.IsNullOrEmpty(inputString))
         {
             secondValue = Convert.ToDouble(inputString);
             switch (operatorSymbol)
