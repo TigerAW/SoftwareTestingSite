@@ -10,6 +10,10 @@
                 <input type="text" class="calcinput" @bind="@inputString" />
             </div>
             <div>
+                <input type="button" class="btn btn-primary" value="√" @onclick=@(_=>operationClick("sqrt"))>
+                <input type="button" class="btn btn-primary" value="^" @onclick=@(_=>operationClick("^"))>
+                <input type="button" class="btn btn-primary" value="C" @onclick=@(_=>operationClick("C"))>
+                <input type="button" class="btn btn-primary" value="⌫" @onclick=@(_=>operationClick("back"))>
             </div>
             <div>
                 <input type="button" class="btn btn-primary" value="1" @onclick=@(_=>numberClick("1"))>
@@ -58,7 +62,20 @@
         {
             inputString = "-";
         }
-        else
+        else if (operatorSymbol == "sqrt" && !string.IsNullOrEmpty(inputString))
+        {
+            inputValue = Convert.ToDouble(inputString);
+            inputString = Convert.ToString(Math.Sqrt(inputValue));
+        }
+        else if (operatorSymbol == "C" && !string.IsNullOrEmpty(inputString))
+        {
+            inputString = "";
+        }
+        else if (operatorSymbol == "back" && !string.IsNullOrEmpty(inputString))
+        {
+            inputString = inputString.Remove(inputString.Length - 1);
+        }
+        else if (!string.IsNullOrEmpty(inputString))
         {
             inputValue = Convert.ToDouble(inputString);
             this.operatorSymbol = operatorSymbol;
@@ -67,7 +84,7 @@
     }
     private void operationEquals()
     {
-    
+
         if (!string.IsNullOrEmpty(inputString))
         {
             secondValue = Convert.ToDouble(inputString);
@@ -76,18 +93,23 @@
                 case "/":
                     inputValue /= secondValue;
                     break;
-            
+
                 case "*":
                     inputValue *= secondValue;
                     break;
-           
+
                 case "-":
                     inputValue -= secondValue;
                     break;
-          
+
                 case "+":
                     inputValue += secondValue;
                     break;
+
+                case "^":
+                    inputValue = Math.Pow(inputValue, secondValue);
+                    break;
+
             }
 
             inputString = Convert.ToString(inputValue);
