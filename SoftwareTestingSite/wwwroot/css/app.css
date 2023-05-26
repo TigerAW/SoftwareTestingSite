@@ -16,6 +16,18 @@ a, .btn-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    margin: 3px 1px;
+    width: 5%
+}
+
+.calcinput {
+    width: 40%
+}
+
+.btn-counter {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .content {
