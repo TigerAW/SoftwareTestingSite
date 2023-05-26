@@ -1,4 +1,6 @@
-﻿@page "/counter"
+﻿
+@page "/Counter"
+@using Microsoft.JSInterop﻿
 
 <PageTitle>Counter</PageTitle>
 
@@ -6,13 +8,36 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-counter" @onclick="IncrementCount"> Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCountFromCookie();
+    }
+
+    private async Task IncrementCount()
     {
         currentCount++;
+        await SaveCountToCookie();
+    }
+
+    private async Task SaveCountToCookie()
+    {
+        await JSRuntime.InvokeVoidAsync("setCookie", "CountCookie", currentCount.ToString(), 7);
+    }
+
+    private async Task LoadCountFromCookie()
+    {
+        var cookieValue = await JSRuntime.InvokeAsync<string>("getCookie", "CountCookie");
+        if (!string.IsNullOrEmpty(cookieValue) && int.TryParse(cookieValue, out int count))
+        {
+            currentCount = count;
+        }
     }
 }
