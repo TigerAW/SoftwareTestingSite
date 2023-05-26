@@ -13,6 +13,7 @@ a, .btn-link {
 }
 
 .btn-primary {
+    font-size: 150%;
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
@@ -21,7 +22,9 @@ a, .btn-link {
 }
 
 .calcinput {
-    width: 40%
+    font-size: 250%;
+    text-align: right;
+    width: 21.5%
 }
 
 .btn-counter {
